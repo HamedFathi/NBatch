@@ -18,17 +18,17 @@ Read items from a file, and print it to the console.
 
 ```C#
 static void Main(string[] args)
-        {
-            string sourceUrl = @"c:\sample.txt";
-            
-            IStep processFileStep = new Step<Product, Product>("processFileStep")
-                .UseFlatFileItemReader(url: sourceUrl, fieldMapper: new ProductMapper())
-                .SetWriter(new ConsoleWriter<Product>());
+{
+    string sourceUrl = @"c:\sample.txt";
+    
+    IStep processFileStep = new Step<Product, Product>("processFileStep")
+        .UseFlatFileItemReader(url: sourceUrl, fieldMapper: new ProductMapper())
+        .SetWriter(new ConsoleWriter<Product>());
 
-            new Job()
-                .AddStep(processFileStep)
-                .Start();
-        }
+    new Job()
+        .AddStep(processFileStep)
+        .Start();
+}
 ```
 
 
