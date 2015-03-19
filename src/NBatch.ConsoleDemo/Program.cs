@@ -13,15 +13,7 @@ namespace NBatch.ConsoleDemo
 
             // Step to process the file
             IStep processFileStep = new Step<Product, Product>("processFileStep")
-                .UseFlatFileItemReader(
-                    resourceUrl: sourceUrl,
-                    fieldMapper: new ProductMapper(),
-                    linesToSkip: 1,
-                    headers: new[] { "ProductId", "Name", "Description", "Price" })
-                .WithChunkSize(5)
-                .SkipLimit(10)
-                .SkippableExceptions(typeof(FlatFileParseException))
-                .SetProcessor(new ProductUppercaseProcessor())
+                .UseFlatFileItemReader(resourceUrl: sourceUrl, fieldMapper: new ProductMapper())
                 .SetWriter(new ConsoleWriter<Product>());
 
             // Step to clean-up the file after previous step is done processing it

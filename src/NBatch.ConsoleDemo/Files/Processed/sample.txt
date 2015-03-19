@@ -1,5 +1,4 @@
-﻿ProductId,Name,Description,Price
-1111,C# For Dummies,The book you should avoid,800.00
+﻿1111,C# For Dummies,The book you should avoid,800.00
 2222,Design Patterns,The worlds authority on software designs, 299.99
 3333,Java 8 In Depth,Finally Lambdas, 399.99
 4444,Effective Java,The best java book, 499.99

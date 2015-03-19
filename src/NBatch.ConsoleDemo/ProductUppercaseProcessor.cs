@@ -1,6 +1,4 @@
-using NBatch.Core;
 using NBatch.Core.ItemProcessor;
-using NBatch.Core.ItemReader;
 using NBatch.Core.Reader.FileReader;
 
 namespace NBatch.ConsoleDemo
@@ -25,10 +23,10 @@ namespace NBatch.ConsoleDemo
         {
             return new Product
             {
-                Id = fieldSet.GetInt("ProductId"),
-                Name = fieldSet.GetString("Name"),
-                Description = fieldSet.GetString("Description"),
-                Price = fieldSet.GetDecimal("Price")
+                Id = fieldSet.GetInt(0),
+                Name = fieldSet.GetString(1),
+                Description = fieldSet.GetString(2),
+                Price = fieldSet.GetDecimal(3)
             };
         }
     }
